@@ -1,5 +1,5 @@
 # lib-common.ps1
-# Funcoes compartilhadas por todos os scripts do reset-t2040.
+# Funcoes compartilhadas por todos os scripts do positivo-t2040b-reset.
 # Uso: . "$PSScriptRoot\lib-common.ps1"
 
 $ErrorActionPreference = 'Stop'

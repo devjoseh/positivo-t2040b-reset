@@ -1,4 +1,4 @@
-# reset-t2040
+# positivo-t2040b-reset
 
 Recuperação completa do tablet **Positivo T2040B** (linha educacional SEDUC-SP): do PIN esquecido, passando pelo reflash da ROM oficial, até a remoção dos apps da escola, do provisionamento Android Enterprise e dos ajustes de desempenho.
 
@@ -61,7 +61,7 @@ Você não precisa entender nada de Android. Precisa de:
 
 ### Passo a passo resumido
 
-1. **Baixe este repositório** (botão verde `Code`, depois `Download ZIP`), extraia em uma pasta curta, por exemplo `C:\reset-t2040`.
+1. **Baixe este repositório** (botão verde `Code`, depois `Download ZIP`), extraia em uma pasta curta, por exemplo `C:\positivo-t2040b-reset`.
 2. Abra a pasta `scripts-bat` e execute **`1-verificar-ambiente.bat`** com duplo clique. Ele confere o que falta.
 3. Execute **`2-baixar-instalador.bat`**. São 1,5 GB de download. Ele confere o SHA-256 no final.
 4. Execute **`3-extrair.bat`**. Extrai o `.pac` de 3,2 GB e as ferramentas.
@@ -78,7 +78,7 @@ Leitura recomendada antes de começar: [docs/00-guia-rapido.md](docs/00-guia-rap
 ## Estrutura do repositório
 
 ```
-reset-t2040/
+positivo-t2040b-reset/
 ├── README.md                     este arquivo
 ├── CHANGELOG.md                  histórico de versões
 ├── COMO-PUBLICAR.md              como subir para o GitHub

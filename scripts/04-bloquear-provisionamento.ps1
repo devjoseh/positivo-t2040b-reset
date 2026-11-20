@@ -4,7 +4,7 @@
 
 . "$PSScriptRoot\lib-common.ps1"
 
-Write-Titulo "reset-t2040 - bloqueio do provisionamento"
+Write-Titulo "positivo-t2040b-reset - bloqueio do provisionamento"
 
 $estado = Get-EstadoDispositivo
 if ($estado -ne 'device') {

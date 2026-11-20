@@ -3,7 +3,7 @@
 
 . "$PSScriptRoot\lib-common.ps1"
 
-Write-Titulo "reset-t2040 - download do instalador oficial"
+Write-Titulo "positivo-t2040b-reset - download do instalador oficial"
 
 $destino = Join-Path $DirFerramentas $NomeInstalador
 

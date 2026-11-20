@@ -1,9 +1,9 @@
 @echo off
 chcp 65001 >nul
-title reset-t2040 - 7 de 9 - Ajustes de desempenho
+title positivo-t2040b-reset - 7 de 9 - Ajustes de desempenho
 echo.
 echo ============================================================
-echo   reset-t2040 - 7 de 9 - Ajustes de desempenho
+echo   positivo-t2040b-reset - 7 de 9 - Ajustes de desempenho
 echo ============================================================
 echo.
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0..\scripts\06-ajustes-performance.ps1"

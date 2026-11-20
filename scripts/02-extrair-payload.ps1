@@ -7,7 +7,7 @@ param(
 
 . "$PSScriptRoot\lib-common.ps1"
 
-Write-Titulo "reset-t2040 - extracao do payload"
+Write-Titulo "positivo-t2040b-reset - extracao do payload"
 
 $exe = Join-Path $DirFerramentas $NomeInstalador
 $pac = Join-Path $DirRescuer 'AndroidRescuer\ROM_Android\11178165\Positivo_T2040B_V001_03312022.pac'

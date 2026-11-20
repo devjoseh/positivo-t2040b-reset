@@ -1,4 +1,4 @@
-# reset-t2040 - pacotes que ficam desativados (nao removidos)
+# positivo-t2040b-reset - pacotes que ficam desativados (nao removidos)
 # Formato: um pacote por linha.
 # Motivo: sao pacotes de sistema cuja remocao pode ter efeito colateral.
 # Reverter: adb shell pm enable <pacote>

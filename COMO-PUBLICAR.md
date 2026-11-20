@@ -8,7 +8,7 @@ Falta apenas criar o repositorio remoto e enviar.
 ## 1. Criar o repositorio vazio no GitHub
 
 1. Abra `https://github.com/new`
-2. Nome sugerido: `reset-t2040`
+2. Nome sugerido: `positivo-t2040b-reset`
 3. Descricao sugerida:
 
 ```
@@ -27,8 +27,8 @@ Recuperacao completa do tablet Positivo T2040B: reflash da ROM oficial, remocao 
 No terminal, dentro da pasta do repositorio:
 
 ```powershell
-cd C:\Users\matap\Documents\Github\pessoal\reset-t2040
-git remote add origin https://github.com/SEU_USUARIO/reset-t2040.git
+cd C:\Users\matap\Documents\Github\pessoal\positivo-t2040b-reset
+git remote add origin https://github.com/SEU_USUARIO/positivo-t2040b-reset.git
 git push -u origin main
 ```
 
@@ -37,7 +37,7 @@ GitHub CLI:
 
 ```powershell
 gh auth login
-gh repo create reset-t2040 --public --source . --push
+gh repo create positivo-t2040b-reset --public --source . --push
 ```
 
 ---

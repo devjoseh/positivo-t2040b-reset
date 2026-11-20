@@ -1,4 +1,4 @@
-# reset-t2040 - pacotes removidos
+# positivo-t2040b-reset - pacotes removidos
 # Formato: um pacote por linha, nome completo do pacote Android.
 # Linhas em branco e linhas iniciadas por # sao ignoradas.
 # Quem le este arquivo: scripts/05-remover-apps.ps1

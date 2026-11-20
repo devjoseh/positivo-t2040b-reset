@@ -8,7 +8,7 @@ param(
 
 . "$PSScriptRoot\lib-common.ps1"
 
-Write-Titulo "reset-t2040 - restauracao de aplicativos"
+Write-Titulo "positivo-t2040b-reset - restauracao de aplicativos"
 
 $estado = Get-EstadoDispositivo
 if ($estado -ne 'device') {

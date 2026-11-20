@@ -1,4 +1,4 @@
-# reset-t2040 - pacotes que NUNCA devem ser removidos
+# positivo-t2040b-reset - pacotes que NUNCA devem ser removidos
 # Este arquivo e documental. O script nao remove nada daqui.
 # Se voce remover algum destes, o aparelho pode ficar sem boot,
 # sem Play Store, sem telefonia ou sem interface.

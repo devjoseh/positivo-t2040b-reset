@@ -3,7 +3,7 @@
 
 . "$PSScriptRoot\lib-common.ps1"
 
-Write-Titulo "reset-t2040 - ajustes de desempenho"
+Write-Titulo "positivo-t2040b-reset - ajustes de desempenho"
 
 $estado = Get-EstadoDispositivo
 if ($estado -ne 'device') {

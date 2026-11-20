@@ -8,7 +8,7 @@ param(
 
 . "$PSScriptRoot\lib-common.ps1"
 
-Write-Titulo "reset-t2040 - reflash da ROM oficial"
+Write-Titulo "positivo-t2040b-reset - reflash da ROM oficial"
 
 $pac     = Join-Path $DirRescuer 'AndroidRescuer\ROM_Android\11178165\Positivo_T2040B_V001_03312022.pac'
 $toolDir = Join-Path $DirRescuer 'AndroidRescuer\Gravador_Imagens\Tools\UPGRADEDOWNLOAD_R20.0.0001_+'

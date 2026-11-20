@@ -4,7 +4,7 @@
 
 . "$PSScriptRoot\lib-common.ps1"
 
-Write-Titulo "reset-t2040 - verificacao de ambiente"
+Write-Titulo "positivo-t2040b-reset - verificacao de ambiente"
 
 $problemas = 0
 $avisos = 0

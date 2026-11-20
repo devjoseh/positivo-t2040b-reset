@@ -1,4 +1,4 @@
-# reset-t2040 - ajustes de sistema aplicados
+# positivo-t2040b-reset - ajustes de sistema aplicados
 # Formato: namespace, chave, valor
 # Quem le este arquivo: scripts/06-ajustes-performance.ps1
 
