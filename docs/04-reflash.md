@@ -296,7 +296,7 @@ Por isso o ajuste da secao 5 e obrigatorio.
 ### Na tela do script
 
 ```
-[COMD] IMEI:355105911590980    PASS
+[COMD] IMEI:<IMEI>    PASS
 ```
 
 ### Nos arquivos do gravador
@@ -304,7 +304,7 @@ Por isso o ajuste da secao 5 e obrigatorio.
 `download_result.txt`:
 
 ```
-2026-11-20 17:17:07[COM4]	IMEI:355105911590980     	PASS
+2026-11-20 17:17:07[COM4]	IMEI:<IMEI>     	PASS
 ```
 
 `result.txt`:

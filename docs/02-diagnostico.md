@@ -86,7 +86,7 @@ fastboot devices
 Esperado no T2040B:
 
 ```
-4AD85GK0Z    fastboot
+<NUMERO_DE_SERIE>    fastboot
 ```
 
 Se aparecer, faca os testes de leitura:

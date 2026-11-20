@@ -68,7 +68,7 @@ Numeros do caso real:
 Arquivo `download_result.txt`:
 
 ```
-2026-11-20 16:23:19[COM4]	IMEI:355105911590980	PASS
+2026-11-20 16:23:19[COM4]	IMEI:<IMEI>	PASS
 ```
 
 Arquivo `result.txt`:
