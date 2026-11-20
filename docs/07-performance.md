@@ -1,28 +1,27 @@
 # Desempenho
 
-O que da para melhorar num T2040B, o que nao da, e por que.
+Ajustes aplicáveis ao T2040B e limites do hardware.
 
 ---
 
-## O ponto de partida real
+## Configuração de referência
 
 | Item | Valor |
 |---|---|
-| SoC | Unisoc SC9863A, 8 nucleos (4x 1,6 GHz e 4x 1,2 GHz) |
-| RAM | 2 GB (1.934.332 kB uteis) |
+| SoC | Unisoc SC9863A, 8 núcleos (4x 1,6 GHz e 4x 1,2 GHz) |
+| RAM | 2 GB (1.934.332 kB úteis) |
 | Arquitetura | 32 bits, `armeabi-v7a` e `armeabi` |
 | Android | 11 |
 | Patch | fevereiro de 2022 |
 | Armazenamento | 64 GB, cerca de 52 GB livres |
 
-Contexto antes dos ajustes: 73 MB de RAM livre, 257 MB de swap em uso, 268
-pacotes instalados.
+Estado inicial: 73 MB de RAM livre, 257 MB de swap em uso, 268 pacotes instalados.
 
 ---
 
 ## Ajustes aplicados pelo script
 
-### Animacoes em 0,5x
+### Animações em 0,5x
 
 ```powershell
 adb shell settings put global window_animation_scale 0.5
@@ -30,31 +29,26 @@ adb shell settings put global transition_animation_scale 0.5
 adb shell settings put global animator_duration_scale 0.5
 ```
 
-Efeito: a interface **parece** duas vezes mais rapida, porque as transicoes
-duram metade do tempo. Custo de memoria: zero. E o melhor ajuste por esforco
-neste aparelho.
+As transições passam a durar metade do tempo. Não há custo de memória.
 
-Para voltar ao normal, use `1.0` nos tres. Para deixar instantaneo, use `0`.
+Valores: `1.0` restaura o padrão, `0` remove a animação.
 
-### Varredura de Wi-Fi e Bluetooth em segundo plano
+### Varredura de Wi-Fi e Bluetooth
 
 ```powershell
 adb shell settings put global wifi_scan_always_enabled 0
 adb shell settings put global ble_scan_always_enabled 0
 ```
 
-Efeito: para de varrer redes mesmo com o Wi-Fi desligado. Economia real de
-bateria em aparelho parado. Custo: localizacao por rede fica menos precisa,
-e aplicativos que dependem de varredura em background podem reclamar.
+Interrompe a varredura de redes com o rádio desligado. Reduz consumo em repouso. Efeito colateral: localização por rede fica menos precisa.
 
-### Fontes desconhecidas bloqueadas
+### Instalação fora da loja
 
 ```powershell
 adb shell settings put global install_non_market_apps 0
 ```
 
-Efeito: dificulta instalacao de APK fora da loja. Bom para um aparelho que
-guarda sua conta.
+Dificulta a instalação de APK obtido fora da Play Store.
 
 ### Tempo de tela
 
@@ -62,110 +56,90 @@ guarda sua conta.
 adb shell settings put system screen_off_timeout 120000
 ```
 
-120.000 milissegundos, ou 2 minutos. Aparelho de gaveta com tela de 30 minutos
-chega na tomada com bateria zerada.
+120.000 milissegundos, ou 2 minutos.
 
 ---
 
-## Ajustes manuais que valem a pena
+## Ajustes manuais
 
-Nao estao no script porque dependem de gosto:
-
-| Ajuste | Onde | Efeito |
+| Ajuste | Local | Efeito |
 |---|---|---|
-| Desligar sincronizacao automatica de apps que nao importam | Ajustes, Contas | menos rede e menos CPU |
-| Desativar atualizacao automatica da Play Store | Play Store, Configuracoes | evita downloads em hora ruim |
-| Usar Gallery Go em vez de Fotos | ja instalado | app leve |
-| Baixar mapa offline no Maps | Maps, Mapas off-line | navega sem internet |
-| Manter acima de 15 por cento de armazenamento livre | costume | evita degradacao |
+| Desativar sincronização de aplicativos sem uso | Ajustes, Contas | menos rede e CPU |
+| Desativar atualização automática da Play Store | Play Store, Configurações | evita download em momento inadequado |
+| Usar Gallery Go em vez de Fotos | já instalado | aplicativo mais leve |
+| Baixar mapa offline | Maps, Mapas off-line | navegação sem internet |
+| Manter acima de 15 por cento de armazenamento livre | rotina | evita degradação |
 
 ---
 
-## O que NAO funciona neste aparelho
+## Limites do hardware
 
 ### 64 bits
 
-A ABI e `armeabi-v7a`, sem `arm64-v8a`. Significa que **aplicativos que so
-existem em 64 bits nao instalam**. A Play Store simplesmente nao os oferece.
-Nao ha como resolver sem trocar a ROM, e nao existe ROM 64 bits oficial para
-este modelo.
+A ABI é `armeabi-v7a`, sem `arm64-v8a`. Aplicativos disponíveis apenas em 64 bits não instalam, e a Play Store não os oferece. Não existe ROM oficial 64 bits para este modelo.
 
-Efeito pratico: alguns aplicativos modernos, inclusive bancos e versoes
-recentes de apps populares, podem nao aparecer na loja.
+Consequência: parte dos aplicativos atuais, incluindo bancos e versões recentes de aplicativos populares, pode não estar disponível.
 
-### Mais RAM via software
+### Memória
 
-Nao existe. Ajuste de "acelerador", "limpador de memoria" e "booster" faz o
-contrario: gastam RAM para liberar RAM. O Android gerencia memoria sozinho.
+Não há ganho real em aplicativos de "limpeza de memória" ou "aceleradores". O Android gerencia memória automaticamente, e esses aplicativos consomem RAM para liberar RAM.
 
-### Overclock ou kernel customizado
+### Kernel e overclock
 
-Sem bootloader destravado, nao ha como gravar kernel diferente. E o bootloader
-deste modelo nao destrava.
+O bootloader está travado, o que impede gravar kernel ou ROM alternativa. Não existe build de terceiro para `t2040b`.
 
-### Trocar o launcher por um pesado
+### Launcher
 
-O launcher padrao e o Launcher3 em configuracao Go, que e leve. Um launcher de
-terceiro com muitos recursos (widgets, animacoes, integracao) tende a piorar.
+O launcher padrão é o Launcher3 em configuração Go, já leve. Launchers de terceiros com widgets e animações tendem a piorar o desempenho.
 
 ---
 
-## Onde o consumo realmente esta
+## Consumo após a limpeza
 
-Depois da limpeza, os maiores consumidores eram:
-
-| Processo | Memoria residente |
+| Processo | Memória residente |
 |---|---|
 | `system_server` | 206 a 273 MB |
 | `com.google.android.gms` | 112 a 122 MB |
 | `com.google.android.gms.persistent` | 119 MB |
 | `com.android.systemui` | 117 a 127 MB |
-| `com.android.vending` (Play Store) | 108 MB quando aberto |
+| `com.android.vending` | 108 MB com a loja aberta |
 | `com.android.launcher3` | 91 MB |
 
-Os dois processos do Google Play Services somam cerca de 240 MB. Isso e o piso
-de qualquer Android com Google. Nao da para remover sem perder a Play Store e a
-conta Google.
+Os dois processos do Google Play Services somam cerca de 240 MB, valor mínimo em Android com Google. Remover implicaria perder Play Store e conta.
 
-`system_server` e o proprio Android. Tambem nao sai.
+`system_server` é o próprio Android e não pode ser removido.
 
 ---
 
-## Expectativa honesta
+## Desempenho esperado
 
-Depois de tudo:
-
-| Cenario | Como fica |
+| Uso | Resultado |
 |---|---|
-| Navegar em pagina simples | aceitavel |
-| YouTube no aplicativo | pesado, travar e normal |
-| Duas ou tres abas no Chrome | sofre, principalmente no Chrome |
-| Jogos | nao |
-| Leitor de PDF, notas, musica local | tranquilo |
-| Video local no VLC | tranquilo |
-| Como aparelho de emergencia | excelente, porque o uso e pontual |
+| Navegação em página simples | aceitável |
+| YouTube no aplicativo | lento, travamentos eventuais |
+| Três abas no Chrome | degradação visível |
+| Jogos | inviável |
+| PDF, notas, música local | adequado |
+| Vídeo local no VLC | adequado |
+| Dispositivo de emergência | adequado, pelo uso pontual |
 
 ---
 
-## Se quiser apertar mais
+## Ajustes adicionais possíveis
 
-Ideias que ficam para quem quiser continuar, com o custo de cada uma:
-
-| Ideia | Ganho | Custo |
+| Ajuste | Ganho | Custo |
 |---|---|---|
-| Trocar Chrome por navegador leve | menos RAM ao navegar | perde sincronizacao de senhas |
-| Remover Drive, Docs, Sheets, Slides | cerca de 120 MB de disco | perde edicao de documentos |
-| Remover Maps e YouTube | menos servicos em segundo plano | perde navegacao e video |
-| Remover os 18 overlays `revo` | cerca de 30 MB | cosmetico, sem efeito na gaveta |
-| Desativar contas de sincronizacao | menos rede e CPU | sem backup automatico |
+| Substituir Chrome por navegador leve | menos RAM ao navegar | perde sincronização de senhas |
+| Remover Drive, Docs, Sheets e Slides | cerca de 120 MB de disco | perde edição de documentos |
+| Remover Maps e YouTube | menos serviços em segundo plano | perde navegação e vídeo |
+| Remover os 18 overlays `revo` | cerca de 30 MB | sem efeito visível |
+| Desativar sincronização de contas | menos rede e CPU | sem backup automático |
 
-Nenhuma delas muda o patamar do aparelho. Ele e um tablet de entrada de 2022 com
-2 GB de RAM. O ajuste fino serve para deixar o uso basico confortavel, nao para
-transformar em outro aparelho.
+Nenhum desses ajustes altera a categoria do aparelho. O limite é o hardware.
 
 ---
 
-## Como medir o antes e o depois
+## Medição
 
 ```powershell
 adb shell cat /proc/meminfo | Select-Object -First 3
@@ -174,4 +148,4 @@ adb shell pm list packages | Measure-Object -Line
 adb shell dumpsys batterystats --charged | Select-String "Estimated power use" -Context 0,6
 ```
 
-Guarde a saida em `logs/` para comparar depois de qualquer mudanca.
+Armazenar a saída em `logs/` permite comparação posterior.

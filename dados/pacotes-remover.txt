@@ -4,14 +4,16 @@
 # Quem le este arquivo: scripts/05-remover-apps.ps1
 # Reverter tudo: scripts/99-restaurar-apps.ps1
 
-# ===== ESCOLA / SECRETARIA DE EDUCACAO (4) =====
+# ===== APLICATIVOS DO PROGRAMA EDUCACIONAL (4) =====
+# Identificadores tecnicos dos pacotes, necessarios para a remocao.
+# Sao nomes de instalacao e nao indicam vinculo com instituicao alguma.
 br.gov.sp.educacao.minhaescola
 br.gov.sp.educacao.sed.mobile
 corretoraap.sed.educacao.sp.gov.br.corretordeprova
 tv.ip.edusp
 
 # ===== FABRICANTE E FERRAMENTAS DE FABRICA (15) =====
-# fota: atualizador da Positivo, fonte de ROM educacional
+# fota: atualizador do fabricante, fonte de atualizacao de ROM
 com.positivo.fota
 com.sprd.systemupdate
 com.sprd.engineermode

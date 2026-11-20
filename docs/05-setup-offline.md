@@ -27,7 +27,7 @@ Existem duas origens possiveis:
 | Zero-touch do servidor Google | serial e IMEI registrados no portal da instituicao. A cada formatacao, com internet, o Google manda a ordem | nao, so a instituicao removendo o serial |
 | Config local na ROM | um pacote de configuracao pre-instalado declara o dono | sim, se o pacote for neutralizado |
 
-No T2040B educacional, a origem e **local**. Confirmado pela lista de pacotes:
+Neste modelo, a origem e **local**. Confirmado pela lista de pacotes:
 
 ```
 package:android.autoinstalls.config.positivo.T2040B
@@ -159,7 +159,7 @@ provisionamento.
 
 Depois de tudo pronto, **nao faca reset de fabrica**. Isso:
 
-- Reinstala os aplicativos da escola
+- Reinstala os aplicativos do programa educacional
 - Reativa o `managedprovisioning` e o `partnersetup`
 - Traz o pacote de configuracao de volta
 - Reverte todas as remocoes de apps

@@ -1,10 +1,9 @@
 # Zero-touch: o aviso que volta depois do reset
 
-Este capitulo cobre a parte mais chata de lidar com tablet de projeto
-educacional: o provisionamento Android Enterprise que aparece do lado do
-servidor, mesmo depois de voce limpar tudo no aparelho.
+Este capitulo trata do provisionamento Android Enterprise que aparece do lado
+do servidor mesmo apos a limpeza local do aparelho.
 
-Leia isso antes de concluir que o aparelho esta livre para sempre.
+Ler antes de considerar o aparelho definitivamente liberado.
 
 ---
 
@@ -40,7 +39,7 @@ num portal **zero-touch**, e que ele pretende forcar um reset para que a
 inscricao aconteca na proxima configuracao.
 
 Zero-touch e um recurso do Google em que o **numero de serie** do aparelho e
-registrado no portal da instituicao, pelo revendedor ou pela secretaria. A
+registrado no portal da instituicao, pelo revendedor ou por quem distribuiu o aparelho. A
 partir dai, toda vez que o aparelho e formatado e conectado a internet durante
 a configuracao inicial, ele recebe a ordem de inscricao.
 
@@ -190,7 +189,7 @@ adb shell pm enable com.google.android.gms
 ### Caminho 3: pedir a remocao do registro
 
 A unica cura definitiva. Quem controla o portal e a instituicao que registrou o
-aparelho, normalmente a secretaria de educacao ou a escola.
+aparelho, sendo necessario contato com o suporte dela.
 
 O que pedir:
 

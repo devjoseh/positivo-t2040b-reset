@@ -1,209 +1,169 @@
-# Kit de emergencia
+# Uso como dispositivo reserva
 
-Como transformar o T2040B em um aparelho reserva util, do tipo que salva o dia
-quando o celular principal e roubado, perdido ou quebra.
-
----
-
-## O erro classico que anula o kit
-
-Imagine: o celular e roubado. Voce pega o tablet reserva para entrar na sua
-conta Google. O Google pede o codigo de dois fatores. O codigo chega no
-aplicativo autenticador, que esta no celular roubado.
-
-Pronto. O kit nao serve para nada.
-
-A saida existe, e precisa ser preparada **antes**.
+Procedimento para manter o T2040B funcional como segundo aparelho, com acesso à conta Google, autenticador e dados básicos.
 
 ---
 
-## Passo 0: codigos de backup, antes de qualquer login
+## Dependência crítica
 
-1. Acesse `https://myaccount.google.com/security`
-2. Entre em **Verificacao em duas etapas**
-3. Clique em **Codigos de backup**
-4. Gere ou visualize os 10 codigos
-5. **Imprima ou escreva no papel**
-6. Guarde **fora do tablet** e fora da carteira
+Se o celular principal for perdido e o tablet for o único segundo fator, o login na conta Google exigirá um código que está no aparelho perdido.
 
-Faca o mesmo para os servicos criticos:
+Para evitar o bloqueio, os códigos de backup precisam existir em meio físico, gerados antes de qualquer login no tablet.
 
-| Servico | Onde ficam os codigos |
+---
+
+## Passo 0: códigos de backup
+
+1. Acessar `https://myaccount.google.com/security`
+2. Entrar em **Verificação em duas etapas**
+3. Abrir **Códigos de backup**
+4. Gerar ou consultar os 10 códigos
+5. Imprimir ou registrar em papel
+6. Guardar fora do tablet e fora da carteira
+
+Repetir para os serviços críticos:
+
+| Serviço | Local |
 |---|---|
-| Google | myaccount.google.com, Seguranca, Codigos de backup |
-| Banco | secao de seguranca do internet banking |
-| Redes sociais | configuracao de seguranca de cada uma |
-| E-mail secundario | idem |
-
-Sem isso, o resto do documento nao resolve o problema real.
+| Google | myaccount.google.com, Segurança, Códigos de backup |
+| Banco | seção de segurança do internet banking |
+| Redes sociais | configuração de segurança de cada serviço |
+| E-mail secundário | configuração de segurança |
 
 ---
 
-## Passo 1: conta Google no tablet
+## Passo 1: conta Google
 
 Ajustes, Contas, Adicionar conta, Google.
 
-Vai pedir aprovacao em dois fatores. Use o celular, ou um codigo de backup se
-quiser testar o pior cenario de verdade.
+A autenticação usará o celular principal ou um código de backup.
 
-Depois de entrar, confira em `https://myaccount.google.com/device-activity` se o
-T2040B aparece na lista. E por ali que voce desconecta o aparelho remotamente se
-ele for roubado.
+Após entrar, conferir em `https://myaccount.google.com/device-activity` se o aparelho aparece na lista. Esse é o ponto de remoção remota em caso de perda.
 
-### Vale a pena criar uma conta separada
+### Conta principal ou secundária
 
-Duas estrategias:
-
-| Estrategia | Vantagem | Desvantagem |
+| Estratégia | Vantagem | Desvantagem |
 |---|---|---|
-| Usar a conta principal | um login so, tudo sincronizado | se o tablet for roubado, o ladrao tem acesso a mais coisas |
-| Criar uma conta secundaria | isolamento | dados nao aparecem automaticamente no celular novo |
-
-Para uso como reserva pessoal, a conta principal com PIN forte costuma ser mais
-util. Para emprestar o aparelho, a conta secundaria e melhor.
+| Conta principal | um login, dados sincronizados | acesso mais amplo em caso de roubo |
+| Conta secundária | isolamento | dados não aparecem no aparelho novo |
 
 ---
 
-## Passo 2: aplicativo autenticador
+## Passo 2: autenticador
 
-| Opcao | Vantagem | Desvantagem |
+| Opção | Vantagem | Desvantagem |
 |---|---|---|
-| Google Authenticator | sincroniza na nuvem, recupera em outro aparelho | depende da conta Google |
-| Microsoft Authenticator | integra com contas Microsoft | mais pesado |
-| Aegis Authenticator | open source, exportacao criptografada | backup manual |
+| Google Authenticator | sincronização em nuvem, recuperação em outro aparelho | depende da conta Google |
+| Microsoft Authenticator | integração com contas Microsoft | mais pesado |
+| Aegis Authenticator | código aberto, exportação criptografada | backup manual |
 
-Recomendacao para quem quer simplicidade com redundancia: **Google
-Authenticator mais codigos de backup impressos**.
+Recomendação: Google Authenticator com sincronização ativa, mais códigos de backup impressos.
 
-Depois de instalar:
+Procedimento:
 
-1. Abra o aplicativo e migre ou cadastre as contas.
-2. Se ele oferecer sincronizacao na nuvem, ative.
-3. Se usar Aegis, exporte o arquivo criptografado e guarde em lugar separado.
-4. Confira que cada servico critico tem **ou** codigo de backup **ou** o codigo
-   no autenticador, de preferencia os dois.
+1. Instalar e abrir o aplicativo
+2. Migrar ou cadastrar as contas
+3. Ativar sincronização em nuvem, se disponível
+4. No Aegis, exportar o arquivo criptografado e guardar separado
+5. Confirmar que cada serviço crítico possui código de backup ou registro no autenticador
 
 ---
 
 ## Passo 3: Find My Device
 
-Ajustes, Seguranca, Find My Device, ativar.
+Ajustes, Segurança, Find My Device, ativar.
 
-Com isso voce pode, de outro aparelho:
+Recursos disponíveis a partir de outro aparelho (`https://www.google.com/android/find`):
 
-- Localizar o tablet
-- Fazer ele tocar
+- Localizar
+- Fazer tocar
 - Bloquear a tela
-- Apagar todos os dados remotamente
-
-Guarde o link: `https://www.google.com/android/find`
+- Apagar os dados
 
 ---
 
-## Passo 4: aplicativos uteis de reserva
+## Passo 4: aplicativos
 
-Ja vem instalados e servem bem:
+Instalados de fábrica:
 
-| Aplicativo | Uso no kit |
+| Aplicativo | Uso |
 |---|---|
-| Gmail | ler e enviar e-mail |
+| Gmail | e-mail |
 | Keep | notas sincronizadas |
-| Contatos | agenda de emergencia |
+| Contatos | agenda |
 | Agenda | compromissos |
-| Files | acessar arquivos |
+| Files | arquivos |
 | Gallery Go | fotos |
-| VLC | midia local |
-| Maps | navegacao, com mapa offline baixado |
-| Mensagens | SMS, se um dia houver chip |
+| VLC | mídia local |
+| Maps | navegação, com mapa offline |
+| Mensagens | SMS, se houver chip |
 
-Falta configurar:
+Configuração necessária:
 
-- **Mapas offline**: Maps, foto de perfil, Mapas off-line, escolher cidade.
-  Baixe a sua e a de algum lugar que voce frequenta.
-- **Contatos de emergencia**: Ajustes, Sobre o telefone, Informacoes de
-  emergencia. Preencha para que apareçam na tela de bloqueio.
+- **Mapas offline**: Maps, foto de perfil, Mapas off-line, selecionar cidade
+- **Informações de emergência**: Ajustes, Sobre o telefone, Informações de emergência
 
 ---
 
-## Passo 5: teste de verdade
+## Passo 5: validação
 
-Nao pule. E o unico jeito de saber que funciona.
-
-1. Desligue o celular principal.
-2. No tablet, tente:
-   - Abrir o Gmail e ler a caixa de entrada
-   - Gerar um codigo de dois fatores de um servico qualquer
-   - Entrar em uma conta usando um **codigo de backup** impresso
-   - Abrir o Maps e navegar com o mapa offline
-3. Anote o que falhou.
-
-Se os quatro funcionarem, o kit esta pronto.
+1. Desligar o celular principal
+2. No tablet, verificar:
+   - Abertura do Gmail
+   - Geração de código de dois fatores
+   - Login em um serviço usando código de backup impresso
+   - Navegação com mapa offline
+3. Registrar falhas
 
 ---
 
-## Passo 6: rotina de manutencao
+## Passo 6: manutenção
 
-Aparelho esquecido na gaveta tem dois inimigos: bateria morta e software
-desatualizado.
-
-| Frequencia | O que fazer |
+| Frequência | Ação |
 |---|---|
-| A cada 3 ou 4 semanas | ligar, carregar ate cerca de 80 por cento, abrir a Play Store e atualizar os aplicativos |
-| A cada 6 meses | conferir se os codigos de backup ainda existem, refazer se necessario |
-| Uma vez por ano | revisar se ainda faz sentido manter o aparelho no kit |
+| A cada 3 ou 4 semanas | ligar, carregar até 80 por cento, atualizar aplicativos na Play Store |
+| A cada 6 meses | conferir a existência dos códigos de backup |
+| Anualmente | revisar a necessidade de manter o aparelho |
 
-Sobre a bateria: o ideal e guardar entre 40 e 80 por cento. Bateria em 100 por
-cento parada por meses degrada. Bateria em 0 por cento por meses pode nao
-acordar mais.
+Bateria: armazenar entre 40 e 80 por cento. Carga completa prolongada degrada a célula, e carga zero por período longo pode impedir o funcionamento.
 
-Sobre a rede: deixar o Wi-Fi ligado consome pouco em repouso e mantem o Find My
-Device funcional. Se preferir economizar, desligue e lembre de religar na
-manutencao mensal.
+Rede: manter o Wi-Fi ligado consome pouco em repouso e preserva o Find My Device. Desligar exige lembrar de religar na manutenção mensal.
 
 ---
 
-## Passo 7: fechar as portas
+## Passo 7: configuração de segurança
 
-Coisas a fazer depois que tudo estiver configurado:
-
-1. **Definir PIN de tela**: obrigatorio. Ajustes, Seguranca, Bloqueio de tela.
-2. **Desligar a depuracao USB**: Ajustes, Sistema, Opcoes do desenvolvedor.
-   Foi o canal usado durante todo o processo. Deixar ligado e conveniente para
-   nos e para quem quiser invadir.
-3. **Nao instalar aplicativo de banco**: o aparelho esta sem patch de seguranca
-   desde fevereiro de 2022.
-4. **Nao guardar documentos sensiveis** sem criptografia.
-5. **Anotar o IMEI e o numero de serie** em local separado, para registro em
-   caso de roubo.
+1. **PIN de tela**: Ajustes, Segurança, Bloqueio de tela
+2. **Desativar depuração USB**: Ajustes, Sistema, Opções do desenvolvedor
+3. Não instalar aplicativos de banco, por ausência de patch de segurança
+4. Não armazenar documentos sensíveis sem criptografia
+5. Registrar número de série e IMEI em local separado
 
 ---
 
-## Sobre o risco de usar um aparelho sem patch
-
-Seja realista:
+## Risco de aparelho sem atualização
 
 | Uso | Risco |
 |---|---|
-| Conta Google, e-mail, notas, autenticador | baixo a moderado, sao aplicativos que se atualizam sozinhos |
-| Navegacao em sites conhecidos | moderado, o navegador se atualiza |
-| Aplicativo de banco | **nao recomendado**, depende de patch do sistema |
-| Compras com cartao salvo | **nao recomendado** |
+| Conta Google, e-mail, notas, autenticador | baixo a moderado, aplicativos recebem atualização própria |
+| Navegação em sites conhecidos | moderado |
+| Aplicativo de banco | não recomendado |
+| Compras com cartão salvo | não recomendado |
 
-A regra pratica: o que atualiza sozinho e razoavelmente seguro. O que depende do
-sistema operacional, nao.
+Critério: o que atualiza por conta própria é razoavelmente seguro; o que depende do sistema operacional, não.
 
 ---
 
-## Checklist final
+## Verificação final
 
-- [ ] Codigos de backup do Google impressos e guardados fora do tablet
-- [ ] Conta Google logada no tablet
-- [ ] Tablet aparece em myaccount.google.com/device-activity
+- [ ] Códigos de backup do Google impressos e guardados fora do tablet
+- [ ] Conta Google configurada
+- [ ] Aparelho listado em myaccount.google.com/device-activity
 - [ ] Autenticador instalado e com contas cadastradas
 - [ ] Find My Device ativado
 - [ ] Mapa offline baixado
-- [ ] Contatos de emergencia preenchidos
+- [ ] Informações de emergência preenchidas
 - [ ] PIN de tela definido
-- [ ] Depuracao USB desligada
-- [ ] Teste dos quatro itens da secao 5 aprovado
-- [ ] Rotina de recarga agendada
+- [ ] Depuração USB desativada
+- [ ] Validação do passo 5 concluída
+- [ ] Rotina de recarga definida

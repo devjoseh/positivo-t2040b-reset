@@ -64,7 +64,7 @@ Power off
 **O que chama atencao:** nao existem `Wipe data/factory reset` nem
 `Wipe cache partition`. Nao e defeito, nao e menu cortado, nao e tela
 desatualizada. A Positivo removeu essas opcoes de proposito, porque faz parte
-da politica educacional do aparelho: "protege-se contra a restauracao de
+da politica do fabricante para esse modelo: "protege-se contra a restauracao de
 fabrica".
 
 Consequencia pratica: **nao existe hard reset por menu neste tablet.** Esse e

@@ -6,7 +6,7 @@ Formato baseado em Keep a Changelog, versionamento semantico.
 ## [1.0.0] - 2026-11-20
 
 Primeira versao publica, construida a partir de um caso real de recuperacao
-de um T2040B da rede estadual de Sao Paulo.
+de um T2040B de rede publica de ensino.
 
 ### Adicionado
 
@@ -22,7 +22,7 @@ de um T2040B da rede estadual de Sao Paulo.
 ### Descobertas tecnicas documentadas
 
 - O recovery do T2040B nao possui "Wipe data/factory reset" por decisao de
-  fabrica, ligada a politica educacional. Nao e defeito.
+  fabrica, ligada a politica do fabricante para esse modelo. Nao e defeito.
 - O `fastboot` do aparelho e um stub: `getvar` retorna vazio, `erase userdata`
   responde `Flashing Lock Flag is locked` e todos os comandos `oem` retornam
   `unknown cmd`.

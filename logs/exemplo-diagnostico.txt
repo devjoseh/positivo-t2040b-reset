@@ -32,7 +32,7 @@ desativados:
   package:com.google.android.partnersetup
   package:com.android.managedprovisioning
 
-## RASTROS DE ESCOLA
+## RESIDUOS DO PROGRAMA EDUCACIONAL
   nenhum
 
 ## AJUSTES DE PERFORMANCE

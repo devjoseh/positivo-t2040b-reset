@@ -1,33 +1,28 @@
-# Remocao de aplicativos (debloat)
+# Remoção de aplicativos
 
-Objetivo: tirar do aparelho os aplicativos da escola, as ferramentas de fabrica
-que ninguem usa e o excesso da Google, sem risco de brick e com reversao
-garantida.
+Objetivo: retirar do aparelho os aplicativos do programa educacional, as ferramentas de fábrica sem uso e o excesso de software pré-instalado, com reversão garantida.
 
-Resultado no caso real: **268 pacotes viraram 219**, com zero falhas.
+Resultado no caso real: 268 pacotes para 219, sem falhas.
 
 ---
 
-## Como funciona a remocao
+## Método
 
-O comando usado e:
+Comando utilizado:
 
 ```powershell
 adb shell pm uninstall --user 0 <pacote>
 ```
 
-Pontos importantes:
+Propriedades:
 
-- Isso remove o pacote **para o usuario atual**, nao apaga o arquivo da
-  particao de sistema. O aparelho continua integro.
-- E reversivel a qualquer momento com
-  `adb shell cmd package install-existing <pacote>`.
-- Nao precisa de root.
-- Nao quebra o boot, desde que nao se mexa nos pacotes proibidos.
-- Uma atualizacao de fabrica ou reset restaura tudo. Por isso o documento 05
-  avisa para nao resetar.
+- Remove o pacote para o usuário atual. O arquivo permanece na partição de sistema, que não é alterada.
+- Reversível com `adb shell cmd package install-existing <pacote>`.
+- Não exige root.
+- Não afeta o boot, desde que a lista de exclusão seja respeitada.
+- Reset de fábrica restaura tudo. Ver [05-setup-offline.md](05-setup-offline.md).
 
-Se um pacote recusar a remocao, o script tenta desativar:
+Quando o pacote recusa remoção, o script aplica desativação:
 
 ```powershell
 adb shell pm disable-user --user 0 <pacote>
@@ -37,79 +32,71 @@ adb shell pm disable-user --user 0 <pacote>
 
 ## Categorias removidas
 
-### 1. Escola e secretaria de educacao (4)
+### 1. Programa educacional (4)
 
-| Pacote | O que era |
-|---|---|
-| `br.gov.sp.educacao.minhaescola` | portal Minha Escola |
-| `br.gov.sp.educacao.sed.mobile` | aplicativo da SED |
-| `corretoraap.sed.educacao.sp.gov.br.corretordeprova` | corretor de provas |
-| `tv.ip.edusp` | TV educativa |
+Quatro pacotes de aplicativos do programa educacional estão na lista. Os identificadores exatos ficam em `dados/pacotes-remover.txt`.
 
-Nenhum tem funcao fora da rede escolar. Apos a remocao, a busca por
-`educa|seduc|escola` na lista de pacotes retorna vazio.
+Nenhum deles tem função fora do contexto do programa. Após a remoção, a busca por resíduos na lista de pacotes retorna vazio.
 
-### 2. Fabricante e ferramentas de fabrica (15)
+### 2. Fabricante e ferramentas de fábrica (15)
 
-| Pacote | O que era | Por que sair |
+| Pacote | Função | Motivo da remoção |
 |---|---|---|
-| `com.positivo.fota` | atualizador da Positivo | atualizacao de fabrica, que pode trazer restricoes de volta |
-| `com.sprd.systemupdate` | atualizador da Unisoc | duplicado, sem utilidade |
-| `com.sprd.engineermode` | menu de engenharia | acesso a configuracao de fabrica |
-| `com.sprd.validationtools` | teste de fabrica | sem uso |
+| `com.positivo.fota` | atualizador do fabricante | pode reaplicar configuração de fábrica |
+| `com.sprd.systemupdate` | atualizador da Unisoc | duplicado |
+| `com.sprd.engineermode` | menu de engenharia | acesso a configuração de fábrica |
+| `com.sprd.validationtools` | teste de fábrica | sem uso |
 | `com.sprd.validationtools.revo.overlay` | overlay do teste | sem uso |
-| `com.sprd.autoslt` | teste automatico de linha | sem uso |
-| `com.sprd.cameracalibration` | calibracao de camera | so em fabrica |
+| `com.sprd.autoslt` | teste automático de linha | sem uso |
+| `com.sprd.cameracalibration` | calibração de câmera | uso exclusivo de fábrica |
 | `com.sprd.logmanager` | coleta de logs | sem uso |
-| `com.sprd.maintain` | manutencao | sem uso |
-| `com.sprd.uasetting` | configuracao de agente de usuario | sem uso |
+| `com.sprd.maintain` | manutenção | sem uso |
+| `com.sprd.uasetting` | configuração de agente | sem uso |
 | `com.sprd.omacp` | provisionamento de operadora | sem uso |
-| `com.sprd.quickcamera` | atalho de camera | sem uso |
-| `com.sprd.powersavemodelauncher` | launcher de economia extrema | nao usado |
-| `com.revo.partener.config` | customizacao de parceiro | sem uso |
+| `com.sprd.quickcamera` | atalho de câmera | sem uso |
+| `com.sprd.powersavemodelauncher` | launcher de economia extrema | não utilizado |
+| `com.revo.partener.config` | customização de parceiro | sem uso |
 | `com.unisoc.storageclearmanager` | limpador de armazenamento | redundante |
 
-### 3. Radio e temas (3)
+### 3. Rádio e temas (3)
 
-| Pacote | O que era |
+| Pacote | Função |
 |---|---|
-| `com.android.fmradio` | radio FM, sem hardware no aparelho |
-| `com.android.fmradio.revo.overlay` | overlay da radio |
-| `com.android.overlay.fmradio` | outro overlay |
+| `com.android.fmradio` | rádio FM, sem hardware no aparelho |
+| `com.android.fmradio.revo.overlay` | overlay da rádio |
+| `com.android.overlay.fmradio` | overlay da rádio |
 
-### 4. Aplicativos aprovados pelo dono (3)
+### 4. Aplicativos de escolha do usuário (3)
 
-Estes dependem de gosto. Foram removidos a pedido do dono:
-
-| Pacote | O que era |
+| Pacote | Função |
 |---|---|
-| `com.google.android.apps.assistant` | Assistente Google, versao leve |
+| `com.google.android.apps.assistant` | Assistente Google, versão leve |
 | `com.google.android.apps.wellbeing` | Bem-estar digital |
 | `com.microsoft.teams` | Microsoft Teams |
 
-### 5. Excesso da Google (10)
+### 5. Excesso de software pré-instalado (10)
 
-| Pacote | O que era |
+| Pacote | Função |
 |---|---|
 | `com.google.android.apps.youtube.music` | YouTube Music |
 | `com.google.android.videos` | Play Filmes |
-| `com.google.android.apps.tachyon` | Duo, hoje Meet |
-| `com.google.android.marvin.talkback` | leitor de tela, so util se necessario |
-| `com.google.android.printservice.recommendation` | recomendacao de impressora |
-| `com.android.printspooler` | servico de impressao |
-| `com.android.bips` | impressao embutida |
-| `com.android.egg` | easter egg do Android |
-| `com.android.traceur` | gravador de trace do sistema |
+| `com.google.android.apps.tachyon` | Duo, atualmente Meet |
+| `com.google.android.marvin.talkback` | leitor de tela |
+| `com.google.android.printservice.recommendation` | recomendação de impressora |
+| `com.android.printspooler` | serviço de impressão |
+| `com.android.bips` | impressão embutida |
+| `com.android.egg` | easter egg |
+| `com.android.traceur` | gravação de trace |
 | `com.google.android.feedback` | envio de feedback |
 
-### 6. Restos de configuracao (10)
+### 6. Restos de configuração (10)
 
-| Pacote | O que era |
+| Pacote | Função |
 |---|---|
-| `android.autoinstalls.config.positivo.T2040B` | config de provisionamento |
-| `com.google.android.onetimeinitializer` | inicializacao unica de configuracao |
-| `com.google.android.apps.restore` | restauracao de backup no setup |
-| `com.google.android.gms.location.history` | historico de localizacao |
+| `android.autoinstalls.config.positivo.T2040B` | configuração de provisionamento |
+| `com.google.android.onetimeinitializer` | inicialização única |
+| `com.google.android.apps.restore` | restauração de backup |
+| `com.google.android.gms.location.history` | histórico de localização |
 | `com.android.dreams.basic` | protetor de tela |
 | `com.android.dreams.overlay.basic` | overlay do protetor |
 | `com.android.dreams.overlay.phototable` | protetor de fotos |
@@ -119,20 +106,20 @@ Estes dependem de gosto. Foram removidos a pedido do dono:
 
 ### 7. Diversos (4)
 
-| Pacote | O que era |
+| Pacote | Função |
 |---|---|
 | `com.android.bluetoothmidiservice` | MIDI por Bluetooth |
-| `com.spreadtrum.proxy.nfwlocation` | proxy de localizacao NFC, sem NFC no aparelho |
-| `com.sprd.cameraipcontrol` | controle de camera IP, ferramenta de fabrica |
-| `com.android.dynsystem` | atualizacao dinamica de sistema, nao usada |
+| `com.spreadtrum.proxy.nfwlocation` | proxy de localização NFC, sem NFC no aparelho |
+| `com.sprd.cameraipcontrol` | controle de câmera, ferramenta de fábrica |
+| `com.android.dynsystem` | atualização dinâmica de sistema |
 
-Total da lista: 4 mais 15 mais 3 mais 3 mais 10 mais 10 mais 4, igual a **49 pacotes**.
+Total: 4 mais 15 mais 3 mais 3 mais 10 mais 10 mais 4, igual a 49 pacotes.
 
 ---
 
-## Os tres pacotes que ficam desativados
+## Pacotes desativados
 
-Nao foram removidos porque sao de sistema e a remocao pode ter efeito colateral:
+Três pacotes de sistema permanecem instalados, porém desativados:
 
 ```powershell
 adb shell pm disable-user --user 0 com.android.nfc
@@ -140,94 +127,83 @@ adb shell pm disable-user --user 0 com.google.android.partnersetup
 adb shell pm disable-user --user 0 com.android.managedprovisioning
 ```
 
-| Pacote | Motivo de estar desativado |
+| Pacote | Motivo |
 |---|---|
-| `com.android.nfc` | o aparelho nao tem hardware NFC |
-| `com.google.android.partnersetup` | processa a lista de auto-instalacao |
-| `com.android.managedprovisioning` | aplica o device owner corporativo |
+| `com.android.nfc` | aparelho sem hardware NFC |
+| `com.google.android.partnersetup` | processa lista de auto-instalação |
+| `com.android.managedprovisioning` | aplica device owner corporativo |
 
 ---
 
-## O que nunca deve sair
+## Pacotes que não podem ser removidos
 
-A lista completa esta em `dados/pacotes-nunca-remover.txt`. Resumo:
+Lista completa em `dados/pacotes-nunca-remover.txt`. Resumo:
 
-- `com.google.android.gms` e `com.android.vending`: sem isso, nao ha Play Store
-  nem conta Google
-- `com.google.android.setupwizard`: necessario se um dia o aparelho for resetado
+- `com.google.android.gms` e `com.android.vending`: sem eles não há Play Store nem conta Google
+- `com.google.android.setupwizard`: necessário em caso de reset
 - `com.android.systemui`, `com.android.settings`, `com.android.launcher3`
-- `com.android.phone`, `com.android.server.telecom`, `com.unisoc.phone`,
-  `com.spreadtrum.ims`, `com.spreadtrum.vowifi`: o aparelho tem modem LTE, e
-  esses pacotes controlam telefonia e dados moveis
-- `com.android.camera2`, `com.android.gallery3d`, `com.android.deskclock`,
-  `com.android.calculator2`, `org.videolan.vlc`
-- `com.android.providers.*` em geral: sao provedores de dados do sistema
+- `com.android.phone`, `com.android.server.telecom`, `com.unisoc.phone`, `com.spreadtrum.ims`, `com.spreadtrum.vowifi`: o aparelho possui modem LTE
+- `com.android.camera2`, `com.android.gallery3d`, `com.android.deskclock`, `com.android.calculator2`, `org.videolan.vlc`
+- provedores `com.android.providers.*` em geral
 
 ---
 
-## Rodar o script
+## Execução
 
 ```powershell
 .\scripts\05-remover-apps.ps1
 ```
 
-Ou duplo clique em `scripts-bat/6-remover-apps.bat`.
+Ou `scripts-bat/6-remover-apps.bat`.
 
 O script:
 
-1. Le a lista de `dados/pacotes-remover.txt`
-2. Para cada pacote, tenta remover e, se falhar, tenta desativar
-3. Grava um relatorio em `logs/debloat-AAAA-MM-DD-HHMM.txt`
-4. Gera `logs/restaurar-AAAA-MM-DD-HHMM.ps1` com os comandos de volta
-5. Mostra a contagem antes e depois
+1. Lê a lista de `dados/pacotes-remover.txt`
+2. Tenta remover e, em caso de falha, desativa
+3. Grava relatório em `logs/debloat-AAAA-MM-DD-HHMM.txt`
+4. Gera `logs/restaurar-AAAA-MM-DD-HHMM.ps1` com os comandos de reversão
+5. Exibe a contagem antes e depois
 
 ---
 
-## Restaurar um pacote
+## Restauração
 
 ```powershell
-adb shell cmd package install-existing br.gov.sp.educacao.minhaescola
+adb shell cmd package install-existing com.google.android.apps.wellbeing
 ```
 
-Ou rode o script de restauracao gerado:
+Ou o script gerado:
 
 ```powershell
 .\logs\restaurar-2026-11-20-1730.ps1
 ```
 
-Nao e preciso reiniciar. O efeito e imediato.
+O efeito é imediato, sem reinício.
 
 ---
 
-## Como conferir o resultado
+## Verificação
 
 ```powershell
 adb shell pm list packages | Measure-Object -Line
 adb shell pm list packages -3
 adb shell pm list packages -d
-adb shell pm list packages | Select-String "educa|seduc|escola"
+adb shell pm list packages | Select-String "educa|autoinstall"
 ```
 
-Esperado depois da limpeza:
+Valores esperados após a limpeza:
 
 | Consulta | Resultado |
 |---|---|
-| Total de pacotes | 219 (era 268) |
+| Total de pacotes | 219 (antes 268) |
 | Aplicativos de terceiros | 0 |
 | Desativados | 3 |
-| Rastros de escola | nenhum |
+| Resíduos do programa educacional | nenhum |
 
 ---
 
-## Efeito real no desempenho
+## Efeito no desempenho
 
-Sendo honesto: a remocao de bloat ajuda, mas nao transforma o aparelho. O ganho
-principal vem de:
+A remoção reduz a competição por RAM em segundo plano, diminui notificações e sincronizações e libera espaço. Não altera o limite de hardware: 2 GB de RAM e CPU de 32 bits.
 
-- Menos servicos em segundo plano competindo por RAM
-- Menos notificacoes e sincronizacoes
-- Menos atualizacoes automaticas
-- Menos espaco usado
-
-O limite continua sendo o hardware: 2 GB de RAM e CPU de 32 bits. O documento
-[07-performance.md](07-performance.md) e realista sobre isso.
+Análise em [07-performance.md](07-performance.md).

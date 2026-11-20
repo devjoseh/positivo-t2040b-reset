@@ -33,9 +33,9 @@ https://www.meupositivo.com.br/para-voce/suporte-tecnico/recuperacao-android
 Digite o numero de serie do aparelho e baixe o pacote. O proprio site avisa que
 o procedimento apaga todos os dados.
 
-### Caminho alternativo, pelo manual do CIEQ
+### Caminho alternativo, por manual tecnico
 
-O Centro de Informacoes Educacionais da Secretaria da Educacao de Sao Paulo
+Um manual tecnico publicado pela rede de ensino
 publica um manual com links diretos por modelo:
 
 ```

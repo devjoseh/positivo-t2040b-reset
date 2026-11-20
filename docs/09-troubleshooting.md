@@ -17,7 +17,7 @@ serie.
 **Solucao:**
 
 1. Tente novamente mais tarde.
-2. Use o link direto do manual do CIEQ (documento 04).
+2. Use o link direto do manual tecnico (documento 04).
 3. Se o link direto der 403, o token expirou. Nesse caso so resta a pagina
    oficial ou pedir o arquivo ao suporte com o numero de serie.
 
@@ -252,4 +252,4 @@ powershell -ExecutionPolicy Bypass -File .\scripts\05-remover-apps.ps1
 Se depois de reflashar duas vezes o aparelho nao ligar, e o modo download
 continuar funcionando, o problema provavelmente e hardware ou ROM corrompida.
 Vale procurar o suporte da Positivo com o numero de serie, ou o canal de
-atendimento educacional se o aparelho veio de escola.
+canal de atendimento do fabricante.

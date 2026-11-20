@@ -36,7 +36,7 @@
 | `recovery` | modo de recuperacao | tem menu sem opcao de wipe |
 | `system` | Android base | contem `PlayAutoInstallConfig-br` |
 | `system_ext` | extensoes do sistema | contem `CallFireWall` |
-| `product` | apps do fabricante | contem `minhaescola` e `FotaPositivo` |
+| `product` | apps do fabricante | contem `FotaPositivo` e aplicativos do programa educacional |
 | `vendor` | drivers do SoC | contem ferramentas Unisoc |
 | `misc` | comandos de boot | usado pelo bootloader |
 | `persist` | calibracao e IMEI | nao mexer |
@@ -85,7 +85,7 @@ O identificador do dispositivo fisico e o numero de serie, no formato
 | Assunto | Endereco |
 |---|---|
 | Recuperacao Eletronica Android Positivo | `https://www.meupositivo.com.br/para-voce/suporte-tecnico/recuperacao-android` |
-| Manual do CIEQ com links por modelo | `https://drive.google.com/file/d/1vnIjEM87SUkgpjeM6r7VkTdgCBqRESTd/view` |
+| Manual tecnico com links por modelo | `https://drive.google.com/file/d/1vnIjEM87SUkgpjeM6r7VkTdgCBqRESTd/view` |
 | Ficha tecnica oficial | `https://www.positivoempresas.com.br/wp-content/uploads/2021/05/Ficha_Tecnica_Positivo_T2040.pdf` |
 | Tutorial oficial de hard reset | `https://midiasstoragesec.blob.core.windows.net/001/2023/08/hardreset-tablet-positivo-t2040.pdf` |
 | Android platform tools | `https://developer.android.com/studio/releases/platform-tools` |
@@ -110,7 +110,7 @@ Nao. O processo e todo local, por cabo USB.
 
 ### Preciso de nota fiscal?
 
-Nao. O numero de serie basta para a pagina oficial, e o link do CIEQ nao pede
+Nao. O numero de serie basta para a pagina oficial, e o link do manual nao pede
 nada.
 
 ### Perco a garantia?
@@ -125,7 +125,7 @@ limpa o provisionamento e **nao** preserva as remocoes. Reflash e o caminho.
 
 ### Por que o recovery nao tem "Wipe data"?
 
-Porque a Positivo removeu. Faz parte da politica educacional, que inclui
+Porque a Positivo removeu. Faz parte da politica do fabricante para esse modelo, que inclui
 "protege-se contra a restauracao de fabrica". Nao e defeito do seu aparelho.
 
 ### Por que o fastboot nao funciona?
@@ -150,7 +150,7 @@ fevereiro de 2022.
 Nao. Nao existe build para `t2040b`, o bootloader e travado e a comunidade nao
 cobre esse modelo.
 
-### Vale a pena para uso diario?
+### É adequado para uso diário?
 
 Como segundo aparelho, leitor, video local e kit de emergencia, sim. Como
 aparelho principal em 2026, nao. 2 GB de RAM e 32 bits sao limitantes demais.
