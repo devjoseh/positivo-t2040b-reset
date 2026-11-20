@@ -1,0 +1,9 @@
+# Normaliza fim de linha por tipo de arquivo
+* text=auto
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.md  text eol=lf
+*.txt text eol=lf
+*.ini text eol=crlf
+*.exe binary
+*.pac binary
