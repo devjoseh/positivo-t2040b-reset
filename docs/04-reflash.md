@@ -7,6 +7,19 @@ Tempo: 10 a 12 minutos, mais a extracao.
 
 ---
 
+## Telas do processo
+
+Assistente da Positivo na abertura. E a casca que vai falhar mais adiante:
+
+![Tela inicial do assistente da Positivo](imagens/01-positivo-rescuer-boas-vindas.png)
+
+Estado de espera do gravador, com a instrucao da tecla. O tablet deve estar
+desligado e a tela dele deve ficar preta:
+
+![Gravador aguardando o dispositivo com a tecla Volume mais](imagens/03-aguardando-dispositivo.png)
+
+---
+
 ## 1. De onde vem o arquivo
 
 ### Caminho oficial, por numero de serie

@@ -70,6 +70,8 @@ Get-PSDrive C | Select-Object Free
 
 **Onde:** assistente grafico da Positivo.
 
+![Erro de deteccao do dispositivo no assistente da Positivo](imagens/02-erro-detect-device-timeout.png)
+
 **Causa:** o script espera 60 segundos por uma porta serial que nunca aparece,
 porque o driver nao carregou.
 

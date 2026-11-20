@@ -81,6 +81,7 @@ Leitura recomendada antes de começar: [docs/00-guia-rapido.md](docs/00-guia-rap
 reset-t2040/
 ├── README.md                     este arquivo
 ├── CHANGELOG.md                  histórico de versões
+├── COMO-PUBLICAR.md              como subir para o GitHub
 ├── LICENSE                       MIT
 ├── docs/                         documentação completa
 │   ├── 00-guia-rapido.md         o caminho feliz, sem enrolação
@@ -94,7 +95,8 @@ reset-t2040/
 │   ├── 08-kit-emergencia.md      usando como aparelho reserva
 │   ├── 09-troubleshooting.md     erros e soluções
 │   ├── 10-anatomia-e-faq.md      hardware, partições, perguntas frequentes
-│   └── 11-zero-touch.md          o aviso de organização que volta sozinho
+│   ├── 11-zero-touch.md          o aviso de organização que volta sozinho
+│   └── imagens/                  capturas de tela reais do processo
 ├── scripts/                      PowerShell, um por etapa
 │   ├── lib-common.ps1            funções compartilhadas
 │   ├── 00-verificar-ambiente.ps1
