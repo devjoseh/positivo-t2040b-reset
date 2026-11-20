@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 reset-t2040 contributors
+Copyright (c) 2026 José Hernanes
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,12 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Aviso adicional sobre marcas e firmware:
-
-Este projeto nao distribui firmware. O arquivo .pac e obtido pelo usuario a
-partir do instalador oficial da Positivo Tecnologia. Positivo, Android, Unisoc,
-Spreadtrum e Google sao marcas de seus respectivos titulares. Este trabalho e
-independente e nao possui vinculo com nenhuma delas.

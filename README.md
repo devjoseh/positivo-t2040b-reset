@@ -82,6 +82,7 @@ positivo-t2040b-reset/
 ├── CHANGELOG.md                  histórico de versões
 ├── COMO-PUBLICAR.md              como subir para o GitHub
 ├── LICENSE                       MIT
+├── NOTICE.md                     avisos de firmware e marcas
 ├── docs/                         documentação completa
 │   ├── 00-guia-rapido.md         sequência completa de execução
 │   ├── 01-requisitos.md          ambiente, tempo e conceitos básicos
@@ -170,6 +171,6 @@ Detalhes em [docs/04-reflash.md](docs/04-reflash.md).
 
 ## Licença
 
-MIT. Consulte [LICENSE](LICENSE).
+MIT. Texto completo em [LICENSE](LICENSE).
 
-Positivo, Android, Unisoc e Google são marcas de seus respectivos titulares. Este trabalho é independente e não possui vínculo com o fabricante.
+Avisos sobre firmware e marcas registradas em [NOTICE.md](NOTICE.md).
