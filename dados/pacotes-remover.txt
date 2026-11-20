@@ -1,0 +1,71 @@
+# reset-t2040 - pacotes removidos
+# Formato: um pacote por linha, nome completo do pacote Android.
+# Linhas em branco e linhas iniciadas por # sao ignoradas.
+# Quem le este arquivo: scripts/05-remover-apps.ps1
+# Reverter tudo: scripts/99-restaurar-apps.ps1
+
+# ===== ESCOLA / SECRETARIA DE EDUCACAO (4) =====
+br.gov.sp.educacao.minhaescola
+br.gov.sp.educacao.sed.mobile
+corretoraap.sed.educacao.sp.gov.br.corretordeprova
+tv.ip.edusp
+
+# ===== FABRICANTE E FERRAMENTAS DE FABRICA (15) =====
+# fota: atualizador da Positivo, fonte de ROM educacional
+com.positivo.fota
+com.sprd.systemupdate
+com.sprd.engineermode
+com.sprd.validationtools
+com.sprd.validationtools.revo.overlay
+com.sprd.autoslt
+com.sprd.cameracalibration
+com.sprd.logmanager
+com.sprd.maintain
+com.sprd.uasetting
+com.sprd.omacp
+com.sprd.quickcamera
+com.sprd.powersavemodelauncher
+com.revo.partener.config
+com.unisoc.storageclearmanager
+
+# ===== RADIO FM E OVERLAYS (3) =====
+# o aparelho nao tem hardware de radio FM
+com.android.fmradio
+com.android.fmradio.revo.overlay
+com.android.overlay.fmradio
+
+# ===== APROVADOS PELO DONO (3) =====
+com.google.android.apps.assistant
+com.google.android.apps.wellbeing
+com.microsoft.teams
+
+# ===== EXCESSO DA GOOGLE (10) =====
+com.google.android.apps.youtube.music
+com.google.android.videos
+com.google.android.apps.tachyon
+com.google.android.marvin.talkback
+com.google.android.printservice.recommendation
+com.android.printspooler
+com.android.bips
+com.android.egg
+com.android.traceur
+com.google.android.feedback
+
+# ===== RESTOS DE CONFIGURACAO (10) =====
+# autoinstalls: gatilho do provisionamento Android Enterprise
+android.autoinstalls.config.positivo.T2040B
+com.google.android.onetimeinitializer
+com.google.android.apps.restore
+com.google.android.gms.location.history
+com.android.dreams.basic
+com.android.dreams.overlay.basic
+com.android.dreams.overlay.phototable
+com.android.providers.partnerbookmarks
+com.android.providers.partnerbookmarks.revo.overlay
+com.android.bookmarkprovider
+
+# ===== DIVERSOS (4) =====
+com.android.bluetoothmidiservice
+com.spreadtrum.proxy.nfwlocation
+com.sprd.cameraipcontrol
+com.android.dynsystem

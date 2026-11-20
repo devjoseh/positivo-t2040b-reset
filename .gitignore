@@ -1,0 +1,23 @@
+# Binarios grandes: nunca versionar
+ferramentas/*.exe
+ferramentas/*.pac
+ferramentas/*.zip
+ferramentas/*.7z
+ferramentas/platform-tools/
+ferramentas/7z*/
+
+# Saidas de execucao real
+logs/*.log
+work/
+*.tmp
+*.bak
+
+# Dados pessoais: serie, IMEI e capturas do aparelho
+dados/pessoal/
+*.imei
+*.serial
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

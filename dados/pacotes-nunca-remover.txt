@@ -1,0 +1,106 @@
+# reset-t2040 - pacotes que NUNCA devem ser removidos
+# Este arquivo e documental. O script nao remove nada daqui.
+# Se voce remover algum destes, o aparelho pode ficar sem boot,
+# sem Play Store, sem telefonia ou sem interface.
+
+# ===== NUCLEO DO ANDROID =====
+android
+com.android.systemui
+com.android.settings
+com.android.launcher3
+com.android.phone
+com.android.server.telecom
+com.android.providers.settings
+com.android.providers.media
+com.android.providers.media.module
+com.android.providers.contacts
+com.android.providers.telephony
+com.android.providers.downloads
+com.android.providers.downloads.ui
+com.android.providers.calendar
+com.android.providers.blockednumber
+com.android.providers.userdictionary
+com.android.externalstorage
+com.android.documentsui
+com.android.packageinstaller
+com.android.permissioncontroller
+com.android.shell
+com.android.keychain
+com.android.certinstaller
+com.android.storagemanager
+com.android.settings.intelligence
+com.android.se
+
+# ===== GOOGLE (sem isso nao ha conta nem Play Store) =====
+com.google.android.gms
+com.google.android.gsf
+com.google.android.setupwizard
+com.android.vending
+com.google.android.packageinstaller
+com.google.android.permissioncontroller
+com.google.android.webview
+com.google.android.ext.services
+com.google.android.ext.shared
+com.google.android.modulemetadata
+com.google.android.configupdater
+
+# ===== TELEFONIA E MODEM (o aparelho tem modem LTE) =====
+com.unisoc.phone
+com.android.unisoc.telephony.server
+com.spreadtrum.ims
+com.spreadtrum.vowifi
+com.spreadtrum.vowifi.conf
+com.sprd.ImsConnectionManager
+com.spreadtrum.vce
+com.android.stk
+com.android.stk.revo.overlay
+com.android.cellbroadcastreceiver
+com.android.cellbroadcastservice
+com.android.mms.service
+com.android.ons
+com.android.carrierconfig
+com.android.carrierdefaultapp
+com.android.emergency
+com.android.dialer
+com.google.android.dialer
+com.google.android.ims
+com.google.android.apps.messaging
+
+# ===== INTERFACE E APPS BASICOS =====
+com.android.camera2
+com.android.gallery3d
+com.android.deskclock
+com.android.calculator2
+com.android.soundrecorder
+com.android.inputdevices
+com.android.wallpaper
+com.android.wallpapercropper
+com.android.wallpaperbackup
+com.android.bluetooth
+com.android.nfc (pode desativar, nao remover)
+org.videolan.vlc
+com.google.android.apps.photosgo
+com.google.android.apps.nbu.files
+com.google.android.contacts
+com.google.android.calendar
+com.google.android.keep
+com.google.android.gm
+com.android.chrome
+
+# ===== PROVEDORES E SERVCOS DE BASE =====
+com.android.location.fused
+com.android.networkstack.inprocess
+com.android.networkstack.tethering.inprocess
+com.android.networkstack.permissionconfig
+com.android.tethering
+com.android.dynsystem (pode remover, ver lista de remocao)
+com.android.vpndialogs
+com.android.proxyhandler
+com.android.captiveportallogin
+com.android.hotspot2.osulogin
+com.android.wifi.resources
+com.android.bluetoothmidiservice (pode remover)
+
+# ===== REGRA GERAL =====
+# Em duvida, NAO remova. O ganho de remover um pacote de sistema
+# e quase sempre pequeno, e o risco de quebrar o boot nao e.

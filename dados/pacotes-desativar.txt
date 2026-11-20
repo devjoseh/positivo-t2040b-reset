@@ -1,0 +1,16 @@
+# reset-t2040 - pacotes que ficam desativados (nao removidos)
+# Formato: um pacote por linha.
+# Motivo: sao pacotes de sistema cuja remocao pode ter efeito colateral.
+# Reverter: adb shell pm enable <pacote>
+
+# Aparelho nao possui hardware NFC
+com.android.nfc
+
+# Processa a lista de auto-instalacao do Play Auto Install.
+# Desativado para impedir que uma ordem de provisionamento seja aplicada.
+com.google.android.partnersetup
+
+# Executor do Android Enterprise (device owner).
+# Desativado, nenhuma inscricao corporativa pode ser aplicada,
+# nem local nem remotamente. Este e o bloqueio principal.
+com.android.managedprovisioning

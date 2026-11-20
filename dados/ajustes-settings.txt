@@ -1,0 +1,31 @@
+# reset-t2040 - ajustes de sistema aplicados
+# Formato: namespace, chave, valor
+# Quem le este arquivo: scripts/06-ajustes-performance.ps1
+
+# ===== ANIMACOES (percepcao de velocidade, custo zero) =====
+global   window_animation_scale        0.5
+global   transition_animation_scale    0.5
+global   animator_duration_scale       0.5
+
+# ===== BATERIA (varreduras em segundo plano) =====
+global   wifi_scan_always_enabled      0
+global   ble_scan_always_enabled       0
+
+# ===== SEGURANCA =====
+global   install_non_market_apps       0
+
+# ===== TELA =====
+system   screen_off_timeout            120000
+
+# ===== OBSERVACOES =====
+# window_animation_scale 0.5 deixa as transicoes na metade do tempo.
+# Use 1.0 para voltar ao padrao, ou 0 para remover a animacao.
+#
+# wifi_scan_always_enabled 0 impede varredura de redes com o Wi-Fi desligado.
+# ble_scan_always_enabled 0 impede varredura Bluetooth em segundo plano.
+# Ambos economizam bateria, ao custo de localizacao por rede menos precisa.
+#
+# install_non_market_apps 0 dificulta instalacao de APK fora da loja.
+# Para instalar APK manualmente depois, volte para 1.
+#
+# screen_off_timeout em milissegundos. 120000 equivale a 2 minutos.

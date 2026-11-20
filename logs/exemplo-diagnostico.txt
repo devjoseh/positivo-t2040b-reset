@@ -1,0 +1,71 @@
+RELATORIO DE DIAGNOSTICO - T2040B
+Gerado em: 2026-11-20 (exemplo real, dados pessoais mascarados)
+==============================================================
+
+## IDENTIFICACAO
+modelo        : * daemon not running; starting now at tcp:5037 * daemon started successfully T2040
+dispositivo   : T2040B
+fingerprint   : positivo/T2040/T2040B:11/R01005/URBB2022033101:user/release-keys
+android       : 11
+patch         : 2022-02-05
+abi           : armeabi-v7a,armeabi
+boot verificado: green
+build type    : user
+debuggable    : 0
+
+## HARDWARE
+MemTotal:        1934332 kB
+/dev/block/dm-10  54G  1.5G   52G   3% /storage/emulated/0/Android/obb
+
+## ESTADO DE PROVISIONAMENTO
+device_provisioned  : 1
+user_setup_complete : 1
+device_policy:
+    Enabled Device Admins (User 0, provisioningState: 0):
+      mPasswordOwner=-1
+
+## PACOTES
+total      : 219
+terceiros  : 0
+desativados:
+  package:com.android.nfc
+  package:com.google.android.partnersetup
+  package:com.android.managedprovisioning
+
+## RASTROS DE ESCOLA
+  nenhum
+
+## AJUSTES DE PERFORMANCE
+window_animation_scale     : 0.5
+transition_animation_scale : 0.5
+animator_duration_scale    : 0.5
+wifi_scan_always_enabled   : 0
+ble_scan_always_enabled    : 0
+install_non_market_apps    : 0
+screen_off_timeout         : 120000
+
+## APLICATIVOS VISIVEIS NA GAVETA
+  com.android.camera2
+  com.android.chrome
+  com.android.deskclock
+  com.android.settings
+  com.android.vending
+  com.google.android.apps.docs
+  com.google.android.apps.docs.editors.docs
+  com.google.android.apps.docs.editors.sheets
+  com.google.android.apps.docs.editors.slides
+  com.google.android.apps.maps
+  com.google.android.apps.messaging
+  com.google.android.apps.photosgo
+  com.google.android.calculator
+  com.google.android.calendar
+  com.google.android.contacts
+  com.google.android.dialer
+  com.google.android.gm
+  com.google.android.youtube
+  com.android.soundrecorder
+  com.google.android.apps.nbu.files
+  com.google.android.apps.searchlite
+  com.google.android.keep
+  org.videolan.vlc
+
